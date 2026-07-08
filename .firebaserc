@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "aniyu-b841b"
+  },
+  "targets": {
+    "aniyu-b841b": {
+      "hosting": {
+        "xponer-site": [
+          "xponer-site"
+        ]
+      }
+    }
+  }
+}
