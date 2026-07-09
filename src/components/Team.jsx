@@ -4,22 +4,22 @@ const teamMembers = [
   {
     name: 'El-Talib Abdulsalam',
     role: 'CEO & Founder',
-    image: '/images/team-ceo.png',
+    image: '/images/team-ceo.jpg',
   },
   {
     name: 'Tioluwalogo Olakunbi-Black',
     role: 'Chief Marketing Officer',
-    image: '/images/team-cmo.png',
+    image: '/images/team-cmo.jpg',
   },
   {
     name: 'Lateepha Abdul',
     role: 'Head of Digital Strategy',
-    image: '/images/team-digital.png',
+    image: '/images/team-digital.jpg',
   },
   {
     name: 'Overcomer Idemudia',
     role: 'Lead Data Analyst',
-    image: '/images/team-analyst.png',
+    image: '/images/team-analyst.jpg',
   },
 ];
 

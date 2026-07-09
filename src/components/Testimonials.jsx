@@ -3,12 +3,14 @@ import React, { useEffect, useRef } from 'react';
 const testimonials = [
   {
     name: 'Olumide Fagbohun',
+    avatar: '/images/testimonial-olumide.jpg',
     quote:
       'Exponer transformed our digital presence and significantly increased our online engagement. Their innovative strategies and dedicated support have been instrumental in our growth.',
     stars: 5,
   },
   {
     name: 'Eleanor Fitzgerald',
+    avatar: '/images/testimonial-eleanor.jpg',
     quote:
       'Their expertise in SEO and content marketing is unmatched. We\'ve seen a remarkable improvement in our website traffic and search rankings since partnering with Exponer.',
     stars: 5,
@@ -18,6 +20,7 @@ const testimonials = [
 const caseStudies = [
   {
     client: 'Henrietta Mitchell',
+    image: '/images/case-study-1.jpg',
     metric: '200%',
     metricLabel: 'Increase in Website Traffic',
     description:
@@ -25,6 +28,7 @@ const caseStudies = [
   },
   {
     client: 'Henry Obinna',
+    image: '/images/case-study-3.jpg',
     metric: '150%',
     metricLabel: 'Boost in Social Media Engagement',
     description:
@@ -71,7 +75,10 @@ function Testimonials() {
               <span className="testimonial-quote-mark">&ldquo;</span>
               <p className="testimonial-text">{t.quote}</p>
               <div className="testimonial-footer">
-                <span className="testimonial-name">{t.name}</span>
+                <div className="testimonial-person">
+                  <img src={t.avatar} alt={t.name} className="testimonial-avatar" />
+                  <span className="testimonial-name">{t.name}</span>
+                </div>
                 <div className="testimonial-stars">
                   {Array.from({ length: t.stars }).map((_, si) => (
                     <span className="star" key={si}>★</span>
@@ -86,6 +93,9 @@ function Testimonials() {
         <div className="case-studies-row animate-on-scroll">
           {caseStudies.map((cs, i) => (
             <div className="case-study-card glass-card" key={i}>
+              <div className="case-study-image">
+                <img src={cs.image} alt="" aria-hidden="true" />
+              </div>
               <div className="case-study-accent-bar"></div>
               <div className="case-study-content">
                 <div className="case-study-metric-badge">

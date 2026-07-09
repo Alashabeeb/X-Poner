@@ -5,7 +5,7 @@ const Hero = () => {
     <section className="hero" id="hero">
       {/* Background Image */}
       <div className="hero-bg-image">
-        <img src="/images/hero-bg.png" alt="" aria-hidden="true" />
+        <img src="/images/hero-globe.jpg" alt="" aria-hidden="true" />
       </div>
       
       {/* Background Elements */}

@@ -23,6 +23,9 @@ function CTA() {
 
   return (
     <section className="cta animate-on-scroll" ref={sectionRef}>
+      <div className="cta-bg-image">
+        <img src="/images/contact-touch.jpg" alt="" aria-hidden="true" />
+      </div>
       <div className="cta-orb cta-orb-1"></div>
       <div className="cta-orb cta-orb-2"></div>
       <div className="cta-content">

@@ -24,12 +24,16 @@ const Footer = () => {
         <div className="footer-grid">
           {/* Brand Column */}
           <div className="footer-brand">
-            <span
-              className="gradient-text"
-              style={{ fontSize: '1.5rem', fontWeight: 800 }}
-            >
-              X-PONER
-            </span>
+            <div className="footer-logo">
+              <img src="/images/logo.png" alt="X-Poner" className="footer-logo-mark" />
+              <span className="footer-logo-word">
+                <span>
+                  <span className="nav-logo-x">X-P</span>
+                  <span className="nav-logo-oner">oner</span>
+                </span>
+                <span className="nav-logo-tagline">Business Solutions</span>
+              </span>
+            </div>
             <p>
               Elevating brands in the digital age through pioneering technology
               marketing solutions.
@@ -86,7 +90,7 @@ const Footer = () => {
 
         {/* Footer Bottom */}
         <div className="footer-bottom">
-          <p>&copy; 2022 - 2024 X-Poner (Exponer). All rights reserved.</p>
+          <p>&copy; 2022 - {new Date().getFullYear()} X-Poner (Exponer). All rights reserved.</p>
           <div className="footer-socials">
             <a
               href="https://twitter.com"

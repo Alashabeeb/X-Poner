@@ -26,6 +26,19 @@ const About = () => {
     { icon: '🔍', title: 'SEO & Content', desc: 'Visibility and engagement' },
   ];
 
+  const highlights = [
+    {
+      image: '/images/about-founded.jpg',
+      title: 'Founded in 2022',
+      desc: 'Exponer has a rich history of success, built on years of experience and industry expertise.',
+    },
+    {
+      image: '/images/about-expertise.jpg',
+      title: 'Expertise',
+      desc: 'We specialize in ATL, BTL, Digital marketing, Social AI, SEO, Content strategy, Social media management, and Data analytics.',
+    },
+  ];
+
   return (
     <section id="about" className="about">
       <div className="container">
@@ -34,8 +47,8 @@ const About = () => {
           <div className="about-visual">
             <div className="about-image-wrapper">
               <img
-                src="/images/about-team.png"
-                alt="X-Poner Team"
+                src="/images/about-team.jpg"
+                alt="The X-Poner team collaborating"
                 className="about-image"
                 style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '20px' }}
               />
@@ -43,6 +56,18 @@ const About = () => {
                 <span className="about-float-number">Since 2022</span>
                 <span className="about-float-text">Founded</span>
               </div>
+            </div>
+
+            <div className="about-highlights">
+              {highlights.map((h, i) => (
+                <div className="about-highlight-item" key={i}>
+                  <img src={h.image} alt={h.title} />
+                  <div>
+                    <h5>{h.title}</h5>
+                    <p>{h.desc}</p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
 
@@ -67,30 +92,6 @@ const About = () => {
               analytics, providing a comprehensive suite of services tailored to meet the unique
               needs of our clients.
             </p>
-
-            {/* VISION & MISSION */}
-            <div className="about-vision-mission animate-on-scroll" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginTop: '2rem' }}>
-              <div className="glass-card" style={{ padding: '1.5rem', borderRadius: '16px' }}>
-                <div style={{ fontSize: '2rem', marginBottom: '0.75rem' }}>👁️</div>
-                <h4 style={{ color: 'var(--primary)', marginBottom: '0.5rem', fontSize: '1.1rem' }}>
-                  Our Vision
-                </h4>
-                <p style={{ fontSize: '0.95rem', lineHeight: '1.6', opacity: 0.85 }}>
-                  To be the foremost innovator in technology-driven marketing solutions, empowering
-                  brands to reach their full potential.
-                </p>
-              </div>
-              <div className="glass-card" style={{ padding: '1.5rem', borderRadius: '16px' }}>
-                <div style={{ fontSize: '2rem', marginBottom: '0.75rem' }}>🚀</div>
-                <h4 style={{ color: 'var(--primary)', marginBottom: '0.5rem', fontSize: '1.1rem' }}>
-                  Our Mission
-                </h4>
-                <p style={{ fontSize: '0.95rem', lineHeight: '1.6', opacity: 0.85 }}>
-                  To deliver cutting-edge marketing strategies that drive engagement, growth, and
-                  brand loyalty through the intelligent use of technology.
-                </p>
-              </div>
-            </div>
 
             {/* FEATURES */}
             <div className="about-features animate-on-scroll">

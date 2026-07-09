@@ -73,16 +73,18 @@ function Stats() {
 
   return (
     <section className="stats animate-on-scroll" ref={sectionRef}>
-      <div className="stats-grid">
-        {stats.map((stat, index) => (
-          <StatItem
-            key={index}
-            number={stat.number}
-            suffix={stat.suffix}
-            label={stat.label}
-            isVisible={isVisible}
-          />
-        ))}
+      <div className="container">
+        <div className="stats-grid">
+          {stats.map((stat, index) => (
+            <StatItem
+              key={index}
+              number={stat.number}
+              suffix={stat.suffix}
+              label={stat.label}
+              isVisible={isVisible}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );

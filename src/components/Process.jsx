@@ -5,21 +5,25 @@ const steps = [
     number: '01',
     title: 'Discovery',
     description: 'We learn about your brand, goals, audience, and competitive landscape.',
+    image: '/images/process-1.jpg',
   },
   {
     number: '02',
     title: 'Strategy',
     description: 'We craft data-driven strategies tailored to your unique needs and objectives.',
+    image: '/images/process-2.jpg',
   },
   {
     number: '03',
     title: 'Execution',
     description: 'Our team implements campaigns across digital, broadcast, and experiential platforms.',
+    image: '/images/process-3.jpg',
   },
   {
     number: '04',
     title: 'Optimization',
     description: 'We track performance in real-time and optimize for maximum impact and ROI.',
+    image: '/images/process-4.jpg',
   },
 ];
 
@@ -62,7 +66,10 @@ function Process() {
               key={index}
               style={{ transitionDelay: `${index * 0.15}s` }}
             >
-              <div className="process-step-number">{step.number}</div>
+              <div className="process-step-image">
+                <img src={step.image} alt={step.title} />
+                <div className="process-step-number">{step.number}</div>
+              </div>
               <h3>{step.title}</h3>
               <p>{step.description}</p>
             </div>

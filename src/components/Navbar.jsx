@@ -21,7 +21,14 @@ function Navbar() {
     <nav className={`navbar${scrolled ? " scrolled" : ""}`}>
       <div className="container">
         <a href="#hero" className="nav-logo" onClick={handleLinkClick}>
-          <span className="nav-logo-text">X-PONER</span>
+          <img src="/images/logo.png" alt="X-Poner" className="nav-logo-mark" />
+          <span className="nav-logo-word">
+            <span className="nav-logo-line">
+              <span className="nav-logo-x">X-P</span>
+              <span className="nav-logo-oner">oner</span>
+            </span>
+            <span className="nav-logo-tagline">Business Solutions</span>
+          </span>
         </a>
 
         <ul className={`nav-links${menuOpen ? " mobile-open" : ""}`}>
@@ -50,13 +57,24 @@ function Navbar() {
               Contact
             </a>
           </li>
+          <li className="nav-cta-mobile-item">
+            <a
+              href="https://wa.me/2347025000063"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-primary"
+              onClick={handleLinkClick}
+            >
+              Make Enquiry
+            </a>
+          </li>
         </ul>
 
         <a
           href="https://wa.me/2347025000063"
           target="_blank"
           rel="noopener noreferrer"
-          className="nav-cta btn btn-primary"
+          className="nav-cta nav-cta-desktop btn btn-primary"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
