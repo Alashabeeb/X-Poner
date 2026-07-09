@@ -73,7 +73,7 @@ const Footer = () => {
                 <a href="tel:+2347025000063">📞 +234-70250-00063</a>
               </li>
               <li>
-                <a href="mailto:hello@exponer.africa">✉️ hello@exponer.africa</a>
+                <a href="mailto:info@x-poner.com">✉️ info@x-poner.com</a>
               </li>
             </ul>
             <a

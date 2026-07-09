@@ -147,7 +147,7 @@ function Services() {
 
           {services.map((service, index) => {
             const side = index % 2 === 0 ? 'left' : 'right';
-            const nodeStyle = side === 'left' ? { left: '25%' } : { right: '25%' };
+            const nodeStyle = { left: '50%' };
             return (
               <div
                 className="snake-row"
