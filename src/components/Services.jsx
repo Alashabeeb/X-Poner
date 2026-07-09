@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 
 const services = [
   {
@@ -67,14 +67,12 @@ const services = [
 ];
 
 const ROW_HEIGHT = 240;
-const VIEW_W = 700;
-const LEFT_X = 175;
-const RIGHT_X = 525;
-const CENTER_X = 350;
+const VIEW_W = 900;
+const LEFT_X = 324;
+const RIGHT_X = 576;
+const CENTER_X = 450;
 
-// Build one continuous, smoothly-curving "snake" path that weaves
-// left / right through the vertical center of each service row.
-function buildSnakePath(count) {
+function buildSnakePaths(count) {
   const totalHeight = count * ROW_HEIGHT;
   const points = [{ x: CENTER_X, y: 0 }];
 
@@ -85,19 +83,20 @@ function buildSnakePath(count) {
   }
   points.push({ x: CENTER_X, y: totalHeight });
 
-  let d = `M ${points[0].x},${points[0].y}`;
-  for (let i = 1; i < points.length; i++) {
-    const prev = points[i - 1];
-    const curr = points[i];
+  const segments = [];
+  for (let i = 0; i < points.length - 1; i++) {
+    const prev = points[i];
+    const curr = points[i + 1];
     const midY = (prev.y + curr.y) / 2;
-    d += ` C ${prev.x},${midY} ${curr.x},${midY} ${curr.x},${curr.y}`;
+    segments.push(`M ${prev.x},${prev.y} C ${prev.x},${midY} ${curr.x},${midY} ${curr.x},${curr.y}`);
   }
-  return { d, totalHeight };
+  return { segments, totalHeight };
 }
 
 function Services() {
   const sectionRef = useRef(null);
-  const { d: pathD, totalHeight } = useMemo(() => buildSnakePath(services.length), []);
+  const [visibleIndices, setVisibleIndices] = useState(new Set());
+  const { segments, totalHeight } = useMemo(() => buildSnakePaths(services.length), []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -105,6 +104,14 @@ function Services() {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add('visible');
+            const idx = entry.target.dataset.index;
+            if (idx !== undefined) {
+              setVisibleIndices((prev) => {
+                const next = new Set(prev);
+                next.add(parseInt(idx, 10));
+                return next;
+              });
+            }
           }
         });
       },
@@ -141,24 +148,41 @@ function Services() {
             preserveAspectRatio="none"
             aria-hidden="true"
           >
-            <path d={pathD} className="snake-path-bg" />
-            <path d={pathD} className="snake-path-fg" />
+            {segments.map((d, i) => (
+              <path key={`bg-${i}`} d={d} className="snake-path-bg" />
+            ))}
+            {segments.map((d, i) => {
+              // segment i goes to card i (except the last segment which goes from last card to bottom)
+              // If card i is visible (or previous is visible), draw the path.
+              // To ensure it draws as the card appears, we link segment i to card i.
+              const isVisible = visibleIndices.has(i === segments.length - 1 ? i - 1 : i);
+              return (
+                <path 
+                  key={`fg-${i}`} 
+                  d={d} 
+                  className={`snake-path-segment ${isVisible ? 'draw-in' : ''}`} 
+                />
+              );
+            })}
           </svg>
 
           {services.map((service, index) => {
             const side = index % 2 === 0 ? 'left' : 'right';
-            const nodeStyle = { left: '50%' };
             return (
               <div
                 className="snake-row"
                 key={service.number}
                 style={{ height: ROW_HEIGHT, top: index * ROW_HEIGHT }}
               >
-                <div className="snake-node" style={nodeStyle}>
+                <div
+                  className={`snake-node animate-on-scroll node-${side}`}
+                  style={{ transitionDelay: `${(index % 4) * 0.08}s` }}
+                >
                   {service.number}
                 </div>
                 <div
                   className={`snake-card animate-on-scroll snake-${side}`}
+                  data-index={index}
                   style={{ transitionDelay: `${(index % 4) * 0.08}s` }}
                 >
                   <div className="service-card-glow"></div>
