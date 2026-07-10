@@ -37,15 +37,11 @@ const Hero = () => {
           <span className="hero-title-gradient">the Digital Age</span>
         </h1>
 
-        <p className="hero-description">
-          We are a pioneering technology marketing firm specializing in cutting-edge
-          strategies that merge innovation, creativity, and data-driven insights to
-          propel brands to new heights.
-        </p>
+
 
         <div className="hero-buttons">
           <a
-            href="https://wa.me/2347025000063"
+            href="https://wa.me/2347025000063?text=Hello%20X-Poner%20Team%2C%20I%20would%20like%20to%20make%20an%20enquiry%20about%20your%20services.%20How%20can%20we%20proceed%3F"
             className="btn btn-whatsapp"
             target="_blank"
             rel="noopener noreferrer"

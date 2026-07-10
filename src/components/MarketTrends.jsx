@@ -36,7 +36,7 @@ function MarketTrends() {
             <h2 className="section-title">Current Market Trends</h2>
             <p className="section-subtitle">
               In the fast-paced world of technology marketing, staying ahead of the
-              curve is crucial. At Exponer, we continuously monitor and adapt to the
+              curve is crucial. At X-Poner, we continuously monitor and adapt to the
               latest market trends to ensure our clients remain competitive and
               relevant.
             </p>

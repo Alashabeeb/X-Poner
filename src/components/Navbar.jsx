@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link, NavLink } from "react-router-dom";
 
 function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -20,37 +21,30 @@ function Navbar() {
   return (
     <nav className={`navbar${scrolled ? " scrolled" : ""}`}>
       <div className="container">
-        <a href="#hero" className="nav-logo" onClick={handleLinkClick}>
-          <img src="/images/logo.png" alt="X-Poner" className="nav-logo-mark" />
-          <span className="nav-logo-word">
-            <span className="nav-logo-line">
-              <span className="nav-logo-x">X-P</span>
-              <span className="nav-logo-oner">oner</span>
-            </span>
-            <span className="nav-logo-tagline">Business Solutions</span>
-          </span>
-        </a>
+        <Link to="/" className="nav-logo" onClick={handleLinkClick}>
+          <img src="/images/logo%202.png" alt="X-Poner" className="nav-logo-mark" />
+        </Link>
 
         <ul className={`nav-links${menuOpen ? " mobile-open" : ""}`}>
           <li>
-            <a href="#hero" onClick={handleLinkClick}>
+            <NavLink to="/" onClick={handleLinkClick}>
               Home
-            </a>
+            </NavLink>
           </li>
           <li>
-            <a href="#about" onClick={handleLinkClick}>
+            <NavLink to="/about" onClick={handleLinkClick}>
               About
-            </a>
+            </NavLink>
           </li>
           <li>
-            <a href="#services" onClick={handleLinkClick}>
+            <NavLink to="/services" onClick={handleLinkClick}>
               Services
-            </a>
+            </NavLink>
           </li>
           <li>
-            <a href="#testimonials" onClick={handleLinkClick}>
+            <NavLink to="/testimonials" onClick={handleLinkClick}>
               Testimonials
-            </a>
+            </NavLink>
           </li>
           <li>
             <a href="#footer" onClick={handleLinkClick}>
@@ -59,7 +53,7 @@ function Navbar() {
           </li>
           <li className="nav-cta-mobile-item">
             <a
-              href="https://wa.me/2347025000063"
+              href="https://wa.me/2347025000063?text=Hello%20X-Poner%20Team%2C%20I%20would%20like%20to%20make%20an%20enquiry%20about%20your%20services.%20How%20can%20we%20proceed%3F"
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-primary"
@@ -71,7 +65,7 @@ function Navbar() {
         </ul>
 
         <a
-          href="https://wa.me/2347025000063"
+          href="https://wa.me/2347025000063?text=Hello%20X-Poner%20Team%2C%20I%20would%20like%20to%20make%20an%20enquiry%20about%20your%20services.%20How%20can%20we%20proceed%3F"
           target="_blank"
           rel="noopener noreferrer"
           className="nav-cta nav-cta-desktop btn btn-primary"

@@ -29,7 +29,7 @@ function VisionMission() {
             <span className="section-label">How We Think</span>
             <h2 className="section-title">Our Vision &amp; Mission</h2>
             <p className="section-subtitle">
-              At Exponer, we are driven by a clear vision and a purposeful mission that
+              At X-Poner, we are driven by a clear vision and a purposeful mission that
               guide our actions and strategies every day.
             </p>
           </div>

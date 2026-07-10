@@ -1,33 +1,31 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import About from './components/About';
-import VisionMission from './components/VisionMission';
-import Services from './components/Services';
-import Process from './components/Process';
-import Stats from './components/Stats';
-import MarketTrends from './components/MarketTrends';
-import Team from './components/Team';
-import Testimonials from './components/Testimonials';
-import CTA from './components/CTA';
 import Footer from './components/Footer';
+
+// Pages
+import HomePage from './pages/HomePage';
+import AboutPage from './pages/AboutPage';
+import ServicesPage from './pages/ServicesPage';
+import TestimonialsPage from './pages/TestimonialsPage';
+
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   return (
-    <div className="app-container">
-      <Navbar />
-      <Hero />
-      <About />
-      <VisionMission />
-      <Services />
-      <Process />
-      <Stats />
-      <MarketTrends />
-      <Team />
-      <Testimonials />
-      <CTA />
-      <Footer />
-    </div>
+    <Router>
+      <ScrollToTop />
+      <div className="app-container">
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/services" element={<ServicesPage />} />
+          <Route path="/testimonials" element={<TestimonialsPage />} />
+        </Routes>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 

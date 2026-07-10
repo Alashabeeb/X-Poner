@@ -30,7 +30,7 @@ const About = () => {
     {
       image: '/images/about-founded.jpg',
       title: 'Founded in 2022',
-      desc: 'Exponer has a rich history of success, built on years of experience and industry expertise.',
+      desc: 'X-Poner has a rich history of success, built on years of experience and industry expertise.',
     },
     {
       image: '/images/about-expertise.jpg',
@@ -78,19 +78,12 @@ const About = () => {
               Pioneering Technology Marketing Solutions
             </h2>
             <p className="section-subtitle animate-on-scroll">
-              Exponer is a leading technology marketing firm that combines data, media, technology,
+              X-Poner is a leading technology marketing firm that combines data, media, technology,
               and creativity to build high-impact marketing ecosystems for brands, institutions, and
               campaigns. Our integrated approach enables organizations to deploy targeted messaging
               across digital, broadcast, and experiential platforms while tracking performance in
               real-time analytics and innovative strategies that drive brand visibility and audience
               engagement across multiple platforms.
-            </p>
-            <p className="section-subtitle animate-on-scroll" style={{ marginTop: '1rem' }}>
-              Exponer has a rich history of success, built on years of experience and industry
-              expertise. We specialize in Above-the-Line, Below-the-Line, Digital marketing, Social
-              Artificial Intelligence, SEO, Content strategy, Social media management, and Data
-              analytics, providing a comprehensive suite of services tailored to meet the unique
-              needs of our clients.
             </p>
 
             {/* FEATURES */}

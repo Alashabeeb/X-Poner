@@ -5,14 +5,14 @@ const testimonials = [
     name: 'Olumide Fagbohun',
     avatar: '/images/testimonial-olumide.jpg',
     quote:
-      'Exponer transformed our digital presence and significantly increased our online engagement. Their innovative strategies and dedicated support have been instrumental in our growth.',
+      'X-Poner transformed our digital presence and significantly increased our online engagement. Their innovative strategies and dedicated support have been instrumental in our growth.',
     stars: 5,
   },
   {
     name: 'Eleanor Fitzgerald',
     avatar: '/images/testimonial-eleanor.jpg',
     quote:
-      'Their expertise in SEO and content marketing is unmatched. We\'ve seen a remarkable improvement in our website traffic and search rankings since partnering with Exponer.',
+      'Their expertise in SEO and content marketing is unmatched. We\'ve seen a remarkable improvement in our website traffic and search rankings since partnering with X-Poner.',
     stars: 5,
   },
 ];

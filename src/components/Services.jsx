@@ -172,6 +172,7 @@ function Services() {
               <div
                 className="snake-row"
                 key={service.number}
+                id={`service-${service.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`}
                 style={{ height: ROW_HEIGHT, top: index * ROW_HEIGHT }}
               >
                 <div

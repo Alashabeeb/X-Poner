@@ -35,7 +35,7 @@ function CTA() {
         </p>
         <div className="cta-buttons">
           <a
-            href="https://wa.me/2347025000063"
+            href="https://wa.me/2347025000063?text=Hello%20X-Poner%20Team%2C%20I%20would%20like%20to%20make%20an%20enquiry%20about%20your%20services.%20How%20can%20we%20proceed%3F"
             target="_blank"
             rel="noopener noreferrer"
             className="btn btn-whatsapp"
@@ -52,7 +52,7 @@ function CTA() {
             Start a Conversation
           </a>
           <a
-            href="mailto:hello@exponer.africa"
+            href="mailto:info@x-poner.com"
             className="btn btn-secondary"
           >
             ✉️ Email Us
